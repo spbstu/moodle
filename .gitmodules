@@ -1,0 +1,12 @@
+[submodule "auth/loginza"]
+	path = auth/loginza
+	url = git@github.com:dketov/moodle-auth_loginza.git
+[submodule "blocks/loginplus"]
+	path = blocks/loginplus
+	url = git@github.com:dketov/moodle-block_loginplus.git
+[submodule "theme/spbspu"]
+	path = theme/spbspu
+	url = git@github.com:spbstu/moodle-theme-spbspu.git
+[submodule "user/profile/field/jabber"]
+	path = user/profile/field/jabber
+	url = git@github.com:dketov/moodle-profile-field-jabber.git
