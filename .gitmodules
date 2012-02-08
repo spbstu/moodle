@@ -10,3 +10,15 @@
 [submodule "user/profile/field/jabber"]
 	path = user/profile/field/jabber
 	url = git@github.com:dketov/moodle-profile-field-jabber.git
+[submodule "blocks/dndupload"]
+	path = blocks/dndupload
+	url = git@github.com:dketov/moodle-block_dndupload.git
+[submodule "blocks/course_contacts"]
+	path = blocks/course_contacts
+	url = git@github.com:dketov/moodle-block_course_contacts.git
+[submodule "blocks/category_combo"]
+	path = blocks/category_combo
+	url = git@github.com:dketov/moodle-block_category_combo.git
+[submodule "enrol/courseinfo"]
+	path = enrol/courseinfo
+	url = git@github.com:dketov/moodle-enrol_courseinfo.git
