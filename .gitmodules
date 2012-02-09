@@ -22,3 +22,15 @@
 [submodule "enrol/courseinfo"]
 	path = enrol/courseinfo
 	url = git@github.com:dketov/moodle-enrol_courseinfo.git
+[submodule "mod/book"]
+	path = mod/book
+	url = https://github.com/skodak/moodle-mod_book.git
+[submodule "mod/attforblock"]
+	path = mod/attforblock
+	url = https://github.com/andreev-artem/moodle_mod_attforblock.git
+[submodule "blocks/attendance"]
+	path = blocks/attendance
+	url = https://github.com/andreev-artem/moodle_blocks_attendance.git
+[submodule "_addons_/mod_bigbluebutton"]
+	path = _addons_/mod_bigbluebutton
+	url = https://github.com/blindsidenetworks/moodle-mod_bigbluebutton.git
