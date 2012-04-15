@@ -37,3 +37,9 @@
 [submodule "blocks/loginza"]
 	path = blocks/loginza
 	url = git@github.com:dketov/moodle-block_loginza.git
+[submodule "blocks/mycourses"]
+	path = blocks/mycourses
+	url = git@github.com:dketov/moodle-block_mycourses.git
+[submodule "blocks/spbstu_profile"]
+	path = blocks/spbstu_profile
+	url = git@github.com:dketov/moodle-block_spbstu_profile.git
