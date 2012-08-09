@@ -1,0 +1,39 @@
+[submodule "theme/spbspu"]
+	path = theme/spbspu
+	url = https://github.com/spbstu/moodle-theme-spbspu.git
+[submodule "auth/loginza"]
+	path = auth/loginza
+	url = https://github.com/dketov/moodle-auth_loginza.git
+[submodule "blocks/attendance"]
+	path = blocks/attendance
+	url = https://github.com/andreev-artem/moodle_blocks_attendance.git
+[submodule "blocks/category_combo"]
+	path = blocks/category_combo
+	url = https://github.com/dketov/moodle-block_category_combo.git
+[submodule "blocks/course_contacts"]
+	path = blocks/course_contacts
+	url = https://github.com/dketov/moodle-block_course_contacts.git
+[submodule "blocks/loginplus"]
+	path = blocks/loginplus
+	url = https://github.com/dketov/moodle-block_loginplus.git
+[submodule "blocks/loginza"]
+	path = blocks/loginza
+	url = https://github.com/dketov/moodle-block_loginza.git
+[submodule "blocks/mycourses"]
+	path = blocks/mycourses
+	url = https://github.com/dketov/moodle-block_mycourses.git
+[submodule "blocks/spbstu_profile"]
+	path = blocks/spbstu_profile
+	url = https://github.com/dketov/moodle-block_spbstu_profile.git
+[submodule "enrol/courseinfo"]
+	path = enrol/courseinfo
+	url = https://github.com/dketov/moodle-enrol_courseinfo.git
+[submodule "mod/attforblock"]
+	path = mod/attforblock
+	url = https://github.com/andreev-artem/moodle_mod_attforblock.git
+[submodule "mod/bigbluebuttonbn"]
+	path = mod/bigbluebuttonbn
+	url = https://github.com/blindsidenetworks/moodle-mod_bigbluebuttonbn.git
+[submodule "user/profile/field/jabber"]
+	path = user/profile/field/jabber
+	url = https://github.com/dketov/moodle-profile-field-jabber.git
