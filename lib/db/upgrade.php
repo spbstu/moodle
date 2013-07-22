@@ -937,5 +937,27 @@ function xmldb_main_upgrade($oldversion) {
         upgrade_main_savepoint(true, 2012062501.06);
     }
 
+    if ($oldversion < 2012062501.08) {
+        // Drop obsolete question upgrade field that should have been added to the install.xml.
+        $table = new xmldb_table('question');
+        $field = new xmldb_field('oldquestiontextformat', XMLDB_TYPE_INTEGER, '2', null, XMLDB_NOTNULL, null, '0');
+
+        if ($dbman->field_exists($table, $field)) {
+            $dbman->drop_field($table, $field);
+        }
+
+        upgrade_main_savepoint(true, 2012062501.08);
+    }
+
+    if ($oldversion < 2012062501.14) {
+        $subquery = 'SELECT b.id FROM {blog_external} b where b.id = ' . $DB->sql_cast_char2int('{post}.content', true);
+        $sql = 'DELETE FROM {post}
+                      WHERE {post}.module = \'blog_external\'
+                            AND NOT EXISTS (' . $subquery . ')
+                            AND ' . $DB->sql_isnotempty('post', 'uniquehash', false, false);
+        $DB->execute($sql);
+        upgrade_main_savepoint(true, 2012062501.14);
+    }
+
     return true;
 }
