@@ -32,7 +32,7 @@ require_once($CFG->dirroot.'/course/dnduploadlib.php');
 
 define('COURSE_MAX_LOGS_PER_PAGE', 1000);       // records
 define('COURSE_MAX_RECENT_PERIOD', 172800);     // Two days, in seconds
-define('COURSE_MAX_SUMMARIES_PER_PAGE', 10);    // courses
+define('COURSE_MAX_SUMMARIES_PER_PAGE', 20);    // courses
 define('COURSE_MAX_COURSES_PER_DROPDOWN',1000); //  max courses in log dropdown before switching to optional
 define('COURSE_MAX_USERS_PER_DROPDOWN',1000);   //  max users in log dropdown before switching to optional
 define('FRONTPAGENEWS',           '0');
@@ -2090,8 +2090,20 @@ function make_categories_list(&$list, &$parents, $requiredcapability = '',
         $categoryname = format_string($category->name, true, array('context' => $context));
 
         // Update $path.
+        $tab = str_repeat('&nbsp;', 3);
+        $tl = textlib_get_instance();
+        $len = $tl->strlen($categoryname);
+        $trimto = 80;
+        if($len > $trimto) {
+            $start = $tl->substr($categoryname, 0, $trimto/2);
+            $end = $tl->substr($categoryname, $len - $trimto/2);
+            $categoryname = $start.' &#x22EF; '.$end;
+        }
+
         if ($path) {
-            $path = $path.' / '.$categoryname;
+            $prefix = str_repeat('&#x2503;'.$tab, mb_substr_count($path, '&#x2523;') +
+                                                  mb_substr_count($path, '&#x2503;'));
+            $path = $prefix.'&#x2523;&#x2501; '.$categoryname;
         } else {
             $path = $categoryname;
         }
