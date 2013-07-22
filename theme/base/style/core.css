@@ -287,8 +287,8 @@ input#id_externalurl {direction:ltr;}
 .loginbox .loginsub {margin-left:0;margin-right:0;}
 .loginbox .guestsub,
 .loginbox .forgotsub,
-.loginbox .potentialidps {margin:5px 12%;}
-.loginbox .potentialidps .potentialidplist {margin-left:40%;}
+.loginbox .potentialidps {margin:5px 12%; float:left;}
+/* .loginbox .potentialidps .potentialidplist {margin-left:40%;} */
 .loginbox .potentialidps .potentialidplist div {text-align:left;}
 .loginbox .loginform {margin-top:1em;text-align:left;}
 .loginbox .loginform .form-label {float:left;text-align:right;width:44%;direction:rtl; white-space:nowrap;}
