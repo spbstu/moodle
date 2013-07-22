@@ -3695,7 +3695,7 @@ function forum_print_discussion_header(&$post, $forum, $group=-1, $datestring=""
     echo "</td>\n";
 
     // User name
-    $fullname = fullname($post, has_capability('moodle/site:viewfullnames', $modcontext));
+    $fullname = fullname($postuser, has_capability('moodle/site:viewfullnames', $modcontext)); 
     echo '<td class="author">';
     echo '<a href="'.$CFG->wwwroot.'/user/view.php?id='.$post->userid.'&amp;course='.$forum->course.'">'.$fullname.'</a>';
     echo "</td>\n";
@@ -5785,7 +5785,11 @@ function forum_print_posts_threaded($course, &$cm, $forum, $discussion, $parent,
                     continue;
                 }
                 $by = new stdClass();
-                $by->name = fullname($post, $canviewfullnames);
+                $by->id = $post->userid;
+                $by->firstname = $post->firstname;
+                $by->lastname = $post->lastname;
+
+                $by->name = fullname($by, $canviewfullnames);
                 $by->date = userdate($post->modified);
 
                 if ($forumtracked) {
