@@ -3512,6 +3512,9 @@ function fullname($user, $override=false) {
         }
     }
 
+    require_once($CFG->dirroot.'/user/profile/lib.php');
+    profile_load_data($user);
+
     return get_string('fullnamedisplay', '', $user);
 }
 
