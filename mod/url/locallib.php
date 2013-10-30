@@ -552,6 +552,27 @@ function url_guess_icon($fullurl) {
         return file_extension_icon('.htm');
     }
 
+    $mod = array();
+    if (preg_match('{'.$CFG->wwwroot.'/mod/([^/]*)/view\.php\?id=([0-9]+)}', $fullurl, $mod)) {
+      $modname = $mod[1];
+      $cm = get_coursemodule_from_id($modname, $mod[2]);
+
+      if (file_exists("$CFG->dirroot/mod/$modname/lib.php")) {
+        include_once("$CFG->dirroot/mod/$modname/lib.php");
+
+        $fn = $modname.'_get_coursemodule_info';
+
+        if (function_exists($fn)) {
+          if ($info = $fn($cm)) {
+            if ($info->icon)
+              return $info->icon;
+          }
+        }
+      }
+
+      return 'mod/' . $mod[1] . '/icon';
+    }
+
     $icon = file_extension_icon($fullurl);
 
     if ($icon === file_extension_icon('')) {

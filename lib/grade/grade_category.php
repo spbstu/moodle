@@ -1165,19 +1165,17 @@ class grade_category extends grade_object {
 
         // now find the requested category and connect categories as children
         $category = false;
-
         foreach ($cats as $catid=>$cat) {
-
             if (empty($cat->parent)) {
-
-                if ($cat->path !== '/'.$cat->id.'/') {
+                if ($cat->path !== '/'.$cat->id.'/' and !empty($cat->path)) { // DVK empty()
+                //if ($cat->path !== '/'.$cat->id.'/' ) { // DVK empty()
                     $grade_category = new grade_category($cat, false);
                     $grade_category->path  = '/'.$cat->id.'/';
                     $grade_category->depth = 1;
                     $grade_category->update('system');
                     return $this->get_children($include_category_items);
                 }
-
+echo "<br/>";
             } else {
 
                 if (empty($cat->path) or !preg_match('|/'.$cat->parent.'/'.$cat->id.'/$|', $cat->path)) {
@@ -1216,7 +1214,6 @@ class grade_category extends grade_object {
         $children_array = grade_category::_get_children_recursion($category);
 
         ksort($children_array);
-
         return $children_array;
 
     }

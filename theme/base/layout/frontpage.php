@@ -42,7 +42,10 @@ echo $OUTPUT->doctype() ?>
 <div id="page">
 
     <div id="page-header" class="clearfix">
-        <h1 class="headermain"><?php echo $PAGE->heading ?></h1>
+        <h1 class="headermain">
+            <img style="float: left; padding-right: 5px;" src="http://dl.spbstu.ru/theme/spbspu/pix/logo.png" >
+            <?php echo $PAGE->heading ?>
+        </h1>
         <div class="headermenu"><?php
             echo $OUTPUT->login_info();
             echo $OUTPUT->lang_menu();

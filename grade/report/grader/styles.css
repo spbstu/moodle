@@ -275,6 +275,7 @@ vertical-align:top;
 width:2.7em;
 height:2.7em;
 margin-right:10px;
+float: left;
 }
 
 .path-grade-report-grader a.quickedit {
@@ -364,6 +365,15 @@ border-right-color:#000;
 
 .path-grade-report-grader table#fixed_column th.user{
 border-right-color:#cecece;
+width: 24ex;
+}
+
+.path-grade-report-grader table#fixed_column th.useridnumber{
+width: 7ex;
+}
+
+.path-grade-report-grader table#fixed_column th.userreport{
+width: 2ex;
 }
 
 .path-grade-report-grader table#fixed_column {
